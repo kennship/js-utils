@@ -1,0 +1,15 @@
+{
+  "name": "@kennship/js",
+  "private": true,
+  "version": "0.0.0-develop",
+  "description": "Ready-to-go JavaScript project configuration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Kennedy <r24y@users.noreply.github.com> (https://rmkennedy.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^2.0.0-rc.4"
+  }
+}
