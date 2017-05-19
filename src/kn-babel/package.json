@@ -1,11 +1,19 @@
 {
   "name": "kn-babel",
-  "version": "0.0.1-develop",
+  "version": "0.0.2-develop",
   "description": "Ready-to-go no-muss Babel configuration.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennship/js-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kennship/js-utils/issues"
+  },
+  "homepage": "https://github.com/kennship/js-utils#readme",
   "author": "Ryan Kennedy <r24y@users.noreply.github.com> (https://rmkennedy.com)",
   "license": "MIT",
   "dependencies": {
