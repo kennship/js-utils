@@ -1,6 +1,6 @@
 {
   "name": "kn-babel",
-  "version": "0.0.0-develop",
+  "version": "0.0.1-develop",
   "description": "Ready-to-go no-muss Babel configuration.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "author": "Ryan Kennedy <r24y@users.noreply.github.com> (https://rmkennedy.com)",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
