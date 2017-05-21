@@ -1,0 +1,29 @@
+{
+  "name": "@kennship/gulp-terraform",
+  "version": "0.0.0-develop",
+  "description": "Run Terraform from Gulp",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennship/js-utils.git"
+  },
+  "author": "Ryan Kennedy <me@r24y.com> (https://rmkennedy.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kennship/js-utils/issues"
+  },
+  "homepage": "https://github.com/kennship/js-utils#readme",
+  "dependencies": {
+    "@kennship/gulp-execute": "*",
+    "gulp-util": "^3.0.8",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "eslint": "^3.19.0",
+    "eslint-config-kennship": "0.0.0-develop"
+  },
+  "peerDependencies": {
+    "gulp": ">=3"
+  }
+}
