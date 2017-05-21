@@ -1,14 +1,17 @@
 {
   "name": "@kennship/gulp-execute",
-  "version": "0.0.0-develop",
-  "module": "src",
+  "version": "0.0.1-develop",
+  "main": "index.js",
   "dependencies": {
-    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-util": "^3.0.8",
     "through2": "^2.0.3"
   },
   "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
     "eslint": "^3.19.0",
     "eslint-config-kennship": "0.0.0-develop"
+  },
+  "peerDependencies": {
+    "gulp": ">=3"
   }
 }
