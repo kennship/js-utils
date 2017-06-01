@@ -1,27 +1,39 @@
 {
   "name": "@kennship/gulp-terraform",
-  "version": "0.0.0-develop",
+  "version": "0.1.0-develop",
   "description": "Run Terraform from Gulp",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kennship/js-utils.git"
   },
+  "scripts": {
+    "ci": "npm run lint && npm test",
+    "lint": "eslint .",
+    "test": "mocha"
+  },
+  "keywords": ["gulpplugin", "terraform"],
   "author": "Ryan Kennedy <me@r24y.com> (https://rmkennedy.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kennship/js-utils/issues"
   },
-  "homepage": "https://github.com/kennship/js-utils#readme",
+  "homepage": "https://github.com/kennship/js-utils/tree/develop/src/gulp-terraform",
   "dependencies": {
     "@kennship/gulp-execute": "*",
+    "decamelize": "^1.2.0",
     "gulp-util": "^3.0.8",
+    "lodash": "^4.17.4",
     "through2": "^2.0.3"
   },
   "devDependencies": {
-    "gulp": "github:gulpjs/gulp#4.0",
+    "chai": "^4.0.1",
     "eslint": "^3.19.0",
-    "eslint-config-kennship": "0.0.0-develop"
+    "eslint-config-kennship": "0.0.0-develop",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.2"
   },
   "peerDependencies": {
     "gulp": ">=3"

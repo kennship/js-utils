@@ -1,0 +1,6 @@
+extends: ../.eslintrc
+env:
+  mocha: true
+rules:
+  valid-jsdoc: off
+  no-invalid-this: off
