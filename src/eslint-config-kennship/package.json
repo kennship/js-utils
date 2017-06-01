@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-kennship",
-  "version": "0.0.0-develop",
+  "version": "0.0.1-develop",
   "description": "",
   "main": "index.js",
   "scripts": {
