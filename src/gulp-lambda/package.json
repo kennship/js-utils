@@ -1,0 +1,50 @@
+{
+  "name": "@kennship/gulp-lambda",
+  "version": "0.0.0-develop",
+  "description": "Gulp utilities to bundle and test AWS Lambda functions",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennship/js-utils.git"
+  },
+  "scripts": {
+    "ci": "npm run lint && npm test",
+    "lint": "eslint .",
+    "test": "mocha"
+  },
+  "keywords": [
+    "gulpplugin",
+    "aws",
+    "lambda"
+  ],
+  "author": "Ryan Kennedy <me@r24y.com> (https://rmkennedy.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kennship/js-utils/issues"
+  },
+  "homepage": "https://github.com/kennship/js-utils/tree/develop/src/gulp-lambda",
+  "engines": {
+    "node": ">= 6"
+  },
+  "dependencies": {
+    "@kennship/gulp-execute": "0.0.1-develop",
+    "gulp-zip": "^4.0.0",
+    "lodash": "^4.17.4",
+    "merge-stream": "^1.0.1",
+    "rollup-stream": "^1.19.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "eslint": "^3.19.0",
+    "eslint-config-kennship": "0.0.0-develop",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-cli": "^1.3.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.2"
+  },
+  "peerDependencies": {
+    "gulp": ">=3"
+  }
+}
