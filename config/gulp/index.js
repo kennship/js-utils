@@ -1,1 +1,2 @@
-import '../../src/gulp-tasks/src/release';
+import registerTasks from '../../src/gulp-tasks/src';
+registerTasks(require('gulp'));
