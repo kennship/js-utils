@@ -10,7 +10,7 @@ module.exports = {
     es6: true,
   },
   rules: {
-    semi: ['error', 'always'],
+    'semi': ['error', 'always'],
     'no-unused-vars': 'error',
     'spaced-comment': [
       'error',
@@ -31,7 +31,7 @@ module.exports = {
     // React rules
     'react/jsx-max-props-per-line': ['error', {when: 'multiline'}],
     'react/jsx-indent-props': ['error', 2],
-    'react/jsx-indent': ['error', 4],
+    'react/jsx-indent': ['error', 2],
     'react/jsx-first-prop-new-line': ['error', 'multiline'],
     'react/jsx-equals-spacing': ['error', 'never'],
     'react/jsx-curly-spacing': ['error', 'never'],

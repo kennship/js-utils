@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-kennship",
-  "version": "0.0.1-develop",
-  "description": "",
+  "version": "0.0.2-develop",
+  "description": "ESLint configuration based on Google's",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
