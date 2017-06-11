@@ -1,0 +1,6 @@
+extends: kennship/config
+env:
+  node: true
+# TODO: push upstream into kennship/config
+rules:
+  react/jsx-indent: [error, 2]
