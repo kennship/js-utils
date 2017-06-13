@@ -1,6 +1,8 @@
 import {log, colors} from 'gulp-util';
+import {readFileSync} from 'fs';
+import toPromise from 'stream-to-promise';
 
-import {creator, reader} from './util';
+import {creator, reader, fromContents} from './util';
 
 import gulpRunner from './gulp';
 import pkgRunner from './package';
@@ -8,7 +10,7 @@ import pkgRunner from './package';
 /**
  * Execute the passed runners.
  */
-function runAll(runners) {
+function runAll(create, runners) {
   /**
    * Run the named phase in all task runners.
    */
@@ -23,9 +25,18 @@ function runAll(runners) {
     }
   }
   return async function run(context) {
-    await runPhase('prompt', context);
-    await runPhase('write', context);
-    await runPhase('install', context);
+    try {
+      await runPhase('prompt', context);
+      await runPhase('write', context);
+      await runPhase('install', context);
+    } catch (error) {
+      log(colors.red('Error!'));
+      log(error);
+    } finally {
+      await toPromise(create('.', fromContents(
+        '.cloudapprc', JSON.stringify(context.cloudapprc, null, 2)
+      )));
+    }
   };
 }
 
@@ -36,10 +47,23 @@ export default function configureTasks(args, env) {
   const create = creator(args, env);
   const src = reader(args, env);
 
-  const generateProject = runAll([pkgRunner, gulpRunner].map(
+  const cloudapprc = {};
+  const cloudapprcPath = env.configFiles['.cloudapp'].path;
+  if (cloudapprcPath) {
+    try {
+      Object.assign(JSON.parse(readFileSync(cloudapprcPath)));
+    } catch (err) {
+      log(colors.red('Error reading .cloudapprc'));
+      log(`Invalid JSON in ${cloudapprcPath}, or could not find file.`);
+      log('Please correct the file manually, or delete it.');
+      process.exit(-1);
+    }
+  }
+
+  const generateProject = runAll(create, [pkgRunner, gulpRunner].map(
     (fn) => fn(args, env, create, src)));
 
   return {
-    new: () => generateProject({}),
+    new: () => generateProject({cloudapprc}),
   };
 }

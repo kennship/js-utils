@@ -1,6 +1,6 @@
 {
   "name": "create-cloud-app",
-  "version": "0.0.0-develop",
+  "version": "0.0.1-develop",
   "description": "Quickly set up a web app with AWS and Terraform.",
   "main": "index.js",
   "scripts": {

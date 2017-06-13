@@ -21,6 +21,7 @@ function makeCli(argv = process.argv.slice(2)) {
     extensions: {rc: null},
     configFiles: {
       '.cloudapp': {
+        path: '.',
         extensions: {rc: null},
         findUp: true,
       },

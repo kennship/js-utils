@@ -161,7 +161,7 @@ export default function configurePackage(args, env, create, src) {
           log(parseError);
         }
       })));
-    await promptPkgJson(this.pkgJsonContents, args, env); // eslint-disable-line no-invalid-this, max-len
+    await promptPkgJson.call(this, this.pkgJsonContents, args, env); // eslint-disable-line no-invalid-this, max-len
   }
 
   /**
@@ -169,7 +169,7 @@ export default function configurePackage(args, env, create, src) {
    */
   async function writePackageFiles() {
     await Promise.all([
-      create('.', packageJson(this.packageJsonContents)), // eslint-disable-line no-invalid-this, max-len
+      create('.', packageJson.call(this, this.packageJsonContents)), // eslint-disable-line no-invalid-this, max-len
       create('.', eslintrc()),
       create('.', gitignore()),
       create('.', tpl('general/**')),
