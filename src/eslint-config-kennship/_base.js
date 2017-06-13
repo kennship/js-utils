@@ -28,6 +28,9 @@ module.exports = {
       },
     ],
 
+    // This rule is usually wrong, in my experience.
+    'no-invalid-this': 'never',
+
     // React rules
     'react/jsx-max-props-per-line': ['error', {when: 'multiline'}],
     'react/jsx-indent-props': ['error', 2],
