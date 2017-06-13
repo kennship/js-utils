@@ -1,9 +1,10 @@
 {
   "name": "@kennship/gulp-tasks",
-  "version": "0.0.0-develop",
+  "version": "0.0.1-develop",
   "description": "Common Gulp utilities.",
   "main": "dist/index.js",
   "scripts": {
+    "prepublish": "gulp bundle",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ryan Kennedy <me@r24y.com> (https://rmkennedy.com)",
