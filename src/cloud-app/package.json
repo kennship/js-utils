@@ -1,0 +1,42 @@
+{
+  "name": "create-cloud-app",
+  "version": "0.0.0-develop",
+  "description": "Quickly set up a web app with AWS and Terraform.",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "gulp bundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "cloud-app": "bin/cloud-app"
+  },
+  "author": "Ryan Kennedy <me@r24y.com> (https://rmkennedy.com)",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@kennship/gulp-lambda": "0.0.0-develop",
+    "eslint": "^3.19.0",
+    "eslint-config-kennship": "^0.0.2-develop",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.3.0",
+    "gulp-conflict": "^0.4.0",
+    "gulp-install": "^1.1.0",
+    "kn-babel": "0.0.2-develop",
+    "rollup-plugin-babel": "^2.7.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "exec-then": "^1.3.1",
+    "gulp-util": "^3.0.8",
+    "ini": "^1.3.4",
+    "inquirer": "^3.1.0",
+    "liftoff": "^2.3.0",
+    "lodash": "^4.17.4",
+    "sort-package-json": "^1.6.1",
+    "stream-to-promise": "^2.2.0",
+    "through2": "^2.0.3",
+    "through2-map": "^3.0.0",
+    "validate-npm-package-name": "^3.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^8.0.1"
+  }
+}
