@@ -30,9 +30,10 @@ function makeCli(argv = process.argv.slice(2)) {
 
   cli.launch = () => {
     const args = yargs
-      .usage('Usage: $0 <generator> [options]')
+      .usage(`Usage: $0 <command> [options]`)
       .command('new', 'Create a new project repository')
       .demandCommand(1)
+      .version(pkg.version)
       .help()
       .parse(argv);
     const cmd = args._[0];
@@ -43,7 +44,6 @@ function makeCli(argv = process.argv.slice(2)) {
       const commands = configureTasks(args, env);
 
       if (cmd && commands[cmd]) {
-        log(`Starting "${cmd}" generator`);
         await commands[cmd]();
         log('Finished.');
       }
