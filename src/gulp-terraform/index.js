@@ -24,11 +24,6 @@ declare function runCommand(
 ): Promise<void>;
 */
 
-
-const run = makeRunner('terraform', {
-  shortName: 'tf',
-});
-
 /**
  * Given a camel-cased key, turn it into a hyphenated CLI flag in the style
  * expected by Terraform.
@@ -113,8 +108,10 @@ function runCommand(
     }
   }
 
-  const runner = opts.runner || run;
   const terraformPath = opts.terraformPath || 'terraform';
+  const runner = opts.runner || makeRunner(terraformPath, {
+    shortName: opts.shortName || 'tf',
+  });
 
   const optionArgs = _(opts.args)
     .toPairs()
@@ -142,7 +139,7 @@ function runCommand(
   }
 
   return runner(
-    [terraformPath, cmd].concat(optionArgs).concat(positionalArgs),
+    [cmd].concat(optionArgs).concat(positionalArgs),
     {
       cwd: _.get(opts, ['cwd'], process.cwd()),
       env: envVars,
@@ -158,7 +155,6 @@ function commandRunner(cmd) {
 }
 
 module.exports = {
-  run,
   runCommand,
 };
 

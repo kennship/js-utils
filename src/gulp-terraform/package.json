@@ -1,6 +1,6 @@
 {
   "name": "@kennship/gulp-terraform",
-  "version": "0.1.0-develop",
+  "version": "0.1.1-develop",
   "description": "Run Terraform from Gulp",
   "main": "index.js",
   "repository": {
