@@ -31,8 +31,8 @@ describe('command convenience functions', function () {
         expect(this.runner.calledOnce).to.be.true;
         const argv = this.runner.getCall(0).args[0];
         expect(argv.slice(0, 2)).to.deep.equal([
-          'terraform',
           cmdName,
+          '-state=/some/path',
         ]);
       });
     });

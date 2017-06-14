@@ -38,12 +38,8 @@ describe('runCommand', function () {
       expect(this.runner.calledOnce).to.be.true;
       const argv = this.runner.getCall(0).args[0];
       expect(argv).to.have.property(0)
-        .that.equals('terraform');
-      expect(argv.slice(0, 2)).to.deep.equal([
-        'terraform',
-        'apply',
-      ]);
-      expect(argv.slice(2)).to.have.members([
+        .that.equals('apply');
+      expect(argv.slice(1)).to.have.members([
         '-state=/some/path',
         '-state-out=/some/other/path',
         '-var', 'foo=bar',
@@ -51,18 +47,6 @@ describe('runCommand', function () {
         '-no-color',
         '-foo-value',
       ]);
-    });
-  });
-  it('should observe `terraformPath` option', function () {
-    return tf.runCommand('plan', {
-      runner: this.runner,
-      terraformPath: '/usr/bin/terraform',
-    })
-    .then(() => {
-      expect(this.runner.calledOnce).to.be.true;
-      const argv = this.runner.getCall(0).args[0];
-      expect(argv).to.have.property(0)
-        .that.equals('/usr/bin/terraform');
     });
   });
 });
