@@ -50,6 +50,7 @@ function createBabelConfig(opts = {}) {
     ...(useReactPreset ? [] : ['transform-flow-strip-types']),
     'transform-object-rest-spread',
     'transform-class-properties',
+    'transform-function-bind',
     ...extraPlugins,
   ];
 

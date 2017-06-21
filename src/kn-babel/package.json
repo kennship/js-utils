@@ -1,6 +1,6 @@
 {
   "name": "kn-babel",
-  "version": "0.0.2-develop",
+  "version": "0.0.3-develop",
   "description": "Ready-to-go no-muss Babel configuration.",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
     "babel-core": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-function-bind": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.4.0",
