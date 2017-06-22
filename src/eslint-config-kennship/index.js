@@ -2,6 +2,11 @@ const baseConfig = require('./_base');
 
 module.exports = Object.assign({}, baseConfig, {
   extends: [...baseConfig.extends],
+  settings: {
+    flowtype: {
+      onlyFilesWithFlowAnnotation: false,
+    },
+  },
   rules: Object.assign({}, baseConfig.rules, {
     'flowtype/define-flow-type': 'warn',
     'flowtype/generic-spacing': ['error', 'never'],
@@ -16,10 +21,6 @@ module.exports = Object.assign({}, baseConfig, {
     'flowtype/require-return-type': [
       'error', 'always',
       {excludeArrowFunctions: 'expressionsOnly'},
-    ],
-    'flowtype/require-valid-file-annotation': [
-      'error', 'always',
-      {annotationStyle: 'line'},
     ],
 
 
