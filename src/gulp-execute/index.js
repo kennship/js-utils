@@ -20,6 +20,7 @@ module.exports = function makeRunner(
     args/*: Array<string> */, opts/*: Object */ = {}
   )/*: Promise<void> */ {
     return new Promise((ok/*: () => void */, fail/*: (Error) => void */) => {
+      const stdout = [];
       const runningProcess = childProcess.spawn(
         executable, args,
         Object.assign({
@@ -35,9 +36,10 @@ module.exports = function makeRunner(
       runningProcess.stdout.on('data', (data/*: Buffer */) => {
         data.toString().replace(/\n$/, '')
         .split('\n')
-        .forEach((line/*: string */) => gutil.log('[%s] %s',
-          gutil.colors.blue.bold(shortName),
-          line));
+        .forEach((line/*: string */) => {
+          gutil.log('[%s] %s', gutil.colors.blue.bold(shortName), line);
+          stdout.push(line);
+        });
       });
       runningProcess.stderr.on('data', (data/*: Buffer */) => {
         data.toString().replace(/\n$/, '')
@@ -53,7 +55,7 @@ module.exports = function makeRunner(
           ));
         } else {
           gutil.log(gutil.colors.green(`${displayName} finished successfully`));
-          ok();
+          ok(stdout);
         }
       });
     });
