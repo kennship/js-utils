@@ -21,6 +21,7 @@ describe('command convenience functions', function () {
     'untaint',
     'validate',
     'version',
+    'workspace',
   ].forEach((cmdName) => describe(`terraform.${cmdName}`, function () {
     it(`should run the "${cmdName}" command`, function () {
       expect(tf[cmdName]).to.be.a('function');

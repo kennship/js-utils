@@ -173,6 +173,7 @@ module.exports = {
   'untaint',
   'validate',
   'version',
+  'workspace',
 ].forEach((commandName) => {
   module.exports[commandName] = commandRunner(commandName);
 });
