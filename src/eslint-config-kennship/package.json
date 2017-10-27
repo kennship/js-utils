@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-kennship",
-  "version": "0.0.4-develop",
+  "version": "0.1.0",
   "description": "ESLint configuration based on Google's",
   "main": "index.js",
   "scripts": {
