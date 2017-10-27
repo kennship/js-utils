@@ -1,7 +1,7 @@
 module.exports = {
   parser: 'babel-eslint',
-  extends: ['eslint:recommended', 'google', 'plugin:react/recommended'],
-  plugins: ['flowtype', 'react'],
+  extends: ['eslint:recommended', 'react-app', 'plugin:react/recommended'],
+  plugins: ['react'],
   parserOptions: {
     ecmaVersion: 8,
     ecmaFeatures: {jsx: true},
@@ -27,9 +27,11 @@ module.exports = {
         asyncArrow: 'always',
       },
     ],
+    'comma-dangle': ['error', 'always-multiline'],
+    'object-curly-spacing': ['error', 'never'],
 
     // This rule is usually wrong, in my experience.
-    'no-invalid-this': 'never',
+    'no-invalid-this': 'off',
 
     // React rules
     'react/jsx-max-props-per-line': ['error', {when: 'multiline'}],
